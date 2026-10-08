@@ -1,0 +1,2511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJ Zak Derdan — Deep House Musician</title>
+    <meta name="description" content="Gridlock Hypnotics. DJ Zak Derdan releases, tracklist and Summer Tour ’26." />
+    <meta property="og:title" content="DJ Zak Derdan — Deep House Musician" />
+    <meta property="og:description" content="Gridlock Hypnotics. DJ Zak Derdan releases, tracklist and Summer Tour ’26." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      /* ══════════════════════════════════════════════════════════════
+         FONTS
+         ══════════════════════════════════════════════════════════════ */
+      @font-face {
+        font-family: 'MonaSemi';
+        src: url('https://cdn.jsdelivr.net/npm/@github/mona-sans@1.0.1/fonts/Mona-Sans.woff2') format('woff2');
+        font-weight: 250;
+        font-stretch: 87.5%;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'MonaSemi';
+        src: url('https://cdn.jsdelivr.net/npm/@github/mona-sans@1.0.1/fonts/Mona-Sans.woff2') format('woff2');
+        font-weight: 400;
+        font-stretch: 87.5%;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'MonaSemi';
+        src: url('https://cdn.jsdelivr.net/npm/@github/mona-sans@1.0.1/fonts/Mona-Sans.woff2') format('woff2');
+        font-weight: 500;
+        font-stretch: 87.5%;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Mona';
+        src: url('https://cdn.jsdelivr.net/npm/@github/mona-sans@1.0.1/fonts/Mona-Sans.woff2') format('woff2');
+        font-weight: 200 900;
+        font-stretch: 100%;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         GLOBAL TOKENS
+         ══════════════════════════════════════════════════════════════ */
+      :root {
+        --orange: #ff630f;
+        --grey: #949494;
+        --pp: "PP Neue Montreal", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: #000;
+      }
+
+      body {
+        margin: 0;
+        background: #000;
+        color: #fff;
+        font-family: Mona, Arial, sans-serif;
+        overflow-x: hidden;
+      }
+
+      button, a {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+        font-weight: 400;
+        background: none;
+        border: 0;
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Reusable Pill Button */
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: #000;
+        border-radius: 999px;
+        gap: 10px;
+        padding: 16px 20px;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+        transition: .25s;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+
+      .pill:hover {
+        background: var(--orange);
+        color: #fff;
+        transform: scale(1.04);
+      }
+
+      /* Custom Cursor */
+      html, body, body * {
+        cursor: none !important;
+      }
+
+      .defaultCursor {
+        position: fixed;
+        z-index: 9999;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .16s cubic-bezier(.44, 0, .56, 1);
+        top: 0;
+        left: 0;
+        will-change: transform;
+      }
+
+      .defaultCursor.visible {
+        opacity: 1;
+      }
+
+      .defaultCursor.overAlbum {
+        opacity: 0 !important;
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         SECTION 1 — HERO
+         ══════════════════════════════════════════════════════════════ */
+      .hero {
+        position: relative;
+        min-height: min(900px, 100svh);
+        background: #000;
+        overflow: hidden;
+        --x: 50%;
+        --y: 50%;
+        --hero-scale: 1;
+        --hero-shift: 0%;
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,.5), transparent 35%, rgba(0,0,0,.5));
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .heroBackdrop,
+      .heroShader {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        transform: translate3d(0, var(--hero-shift), 0) scale(var(--hero-scale));
+        transform-origin: 50% 50%;
+        will-change: transform;
+        pointer-events: none;
+      }
+
+      .heroBackdrop {
+        background: url('https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/bf3df250-6dbc-4deb-a275-776985e9cd2a.png') center 35%/cover no-repeat;
+      }
+
+      .heroShader {
+        opacity: 0;
+        transition: opacity .45s;
+      }
+
+      .heroShader.ready {
+        opacity: 1;
+      }
+
+      .heroShader.ready ~ .cursorGlow {
+        display: none !important;
+      }
+
+      .cursorGlow {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        mix-blend-mode: screen;
+        filter: blur(9px);
+        background: radial-gradient(circle 180px at var(--x) var(--y),
+          rgba(255,99,15,.44), rgba(255,99,15,.08) 45%, transparent 73%);
+        pointer-events: none;
+      }
+
+      /* Hero nav */
+      .heroNav {
+        position: absolute;
+        top: 28px;
+        left: 3%;
+        right: 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+        z-index: 6;
+        animation: introFadeDown .5s cubic-bezier(.44, 0, .56, 1) both;
+      }
+
+      @keyframes introFadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .heroClock {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .clockZone {
+        color: #747474;
+      }
+
+      .clockTime {
+        color: #fff;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .menu {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        place-items: center;
+        gap: 6px;
+        cursor: pointer;
+        color: #fff;
+      }
+
+      .equalizer {
+        height: 12px;
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+      }
+
+      .equalizer i {
+        width: 3px;
+        height: var(--bar-height);
+        background: #fff;
+        display: inline-block;
+        border-radius: 1px;
+        transition: height .28s cubic-bezier(.22, 1, .36, 1);
+      }
+
+      .menu.open .equalizer i {
+        height: 4px !important;
+      }
+
+      .menu small {
+        font: 400 14px/18px var(--pp);
+        letter-spacing: .14px;
+        text-transform: uppercase;
+      }
+
+      /* Menu panel */
+      .menuPanel {
+        position: absolute;
+        z-index: 4;
+        inset: 0 0 auto;
+        height: 507px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 48px;
+        padding: 105px 40px 80px;
+        background: #000;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-24px);
+        transition: opacity .42s cubic-bezier(.44, 0, .56, 1),
+                    transform .42s cubic-bezier(.44, 0, .56, 1),
+                    visibility 0s linear .42s;
+      }
+
+      .menuPanel.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+        transition: opacity .42s cubic-bezier(.44, 0, .56, 1),
+                    transform .42s cubic-bezier(.44, 0, .56, 1),
+                    visibility 0s linear 0s;
+      }
+
+      .rollingLink {
+        display: flex;
+        font: 500 96px/88px MonaSemi, sans-serif;
+        letter-spacing: -3.84px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .rollingLetter {
+        display: inline-block;
+        height: 88px;
+        overflow: hidden;
+      }
+
+      .rollingTrack {
+        display: flex;
+        flex-direction: column;
+        height: 176px;
+        transform: translateY(0);
+        transition: transform .5s cubic-bezier(.44, 0, .56, 1);
+        transition-delay: var(--roll-delay);
+      }
+
+      .rollingTrack > span {
+        display: block;
+        height: 88px;
+        flex: 0 0 88px;
+        line-height: 88px;
+      }
+
+      .rollingLink:hover .rollingTrack {
+        transform: translateY(-88px);
+      }
+
+      /* Hero title */
+      .heroTitle {
+        position: absolute;
+        z-index: 2;
+        top: 130px;
+        left: 3%;
+        right: 3%;
+        display: block;
+      }
+
+      .heroNameRow {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        height: 168px;
+      }
+
+      .heroNameRow > b,
+      .heroTitle h1 {
+        font-family: MonaSemi, sans-serif;
+        font-size: 231px;
+        line-height: .727;
+        letter-spacing: -13.86px;
+        color: #fff;
+        margin: 0;
+      }
+
+      .heroNameRow > b {
+        font-weight: 500;
+        transform: translateX(calc(-.085em + 8px));
+        display: inline-flex;
+      }
+
+      .heroTitle h1 {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        text-align: right;
+        padding-right: 28px;
+      }
+
+      .heroTitle h1 strong {
+        font-weight: 500;
+        font-family: inherit;
+        letter-spacing: inherit;
+        display: inline-flex;
+      }
+
+      .heroTitle h1 .derdan {
+        font-weight: 250;
+        font-family: inherit;
+        letter-spacing: inherit;
+        display: inline-flex;
+      }
+
+      .heroTitle h1 sup {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font: 250 40px/normal MonaSemi, sans-serif;
+        letter-spacing: -2.4px;
+        opacity: 0;
+        animation: introFade .5s cubic-bezier(.44, 0, .56, 1) 1.48s both;
+      }
+
+      .heroSubrow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 28px;
+        min-height: 18px;
+        font: 400 18px/18px var(--pp);
+        animation: introFade .5s cubic-bezier(.44, 0, .56, 1) 1.18s both;
+      }
+
+      .heroSubrow small {
+        font: inherit;
+        letter-spacing: inherit;
+      }
+
+      .heroSubrow small:last-child {
+        text-align: right;
+      }
+
+      /* Hero Animated Letters */
+      .animatedWord {
+        display: inline-flex;
+        font: inherit;
+        letter-spacing: inherit;
+      }
+
+      .letterMask {
+        display: inline-block;
+        overflow: visible;
+        padding-bottom: .08em;
+        margin-bottom: -.08em;
+      }
+
+      .heroLetter {
+        display: inline-block;
+        font: inherit;
+        letter-spacing: inherit;
+        transform: translateY(130%);
+        opacity: 0;
+        filter: blur(40px);
+        will-change: transform, opacity, filter;
+        animation: heroLetterIn .5s cubic-bezier(.44, 0, .56, 1) var(--letter-delay) both;
+      }
+
+      @keyframes heroLetterIn {
+        from {
+          opacity: 0;
+          transform: translateY(130%);
+          filter: blur(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes introFade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes introRise {
+        from {
+          opacity: 0;
+          transform: translateY(56px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .heroNotes {
+        position: absolute;
+        z-index: 2;
+        left: 3%;
+        bottom: 40px;
+        width: 400px;
+        max-width: calc(100vw - 6%);
+        font: 400 18px/1.2 var(--pp);
+        letter-spacing: .02em;
+        animation: introRise .5s cubic-bezier(.44, 0, .56, 1) 1.55s both;
+      }
+
+      .heroNotes p {
+        margin: 0 0 8px;
+      }
+
+      .heroCta {
+        position: absolute;
+        z-index: 2;
+        right: 3%;
+        bottom: 34px;
+        animation: introRise .5s cubic-bezier(.44, 0, .56, 1) 2.075s both;
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         SECTION 2 — ARTIST STATEMENT
+         ══════════════════════════════════════════════════════════════ */
+      .statement {
+        min-height: 900px;
+        padding: 40px 3%;
+        position: relative;
+      }
+
+      .sectionKicker {
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+        display: block;
+      }
+
+      .statementText {
+        position: relative;
+        font-family: MonaSemi, sans-serif;
+        font-weight: 500;
+        font-size: clamp(58px, 6.65vw, 96px);
+        line-height: .92;
+        letter-spacing: -.04em;
+        margin-top: 65px;
+      }
+
+      .statementLineMask {
+        display: block;
+        overflow: hidden;
+        color: #fff;
+        cursor: crosshair;
+        padding-bottom: .14em;
+        margin-bottom: -.14em;
+      }
+
+      .statementLineMask > span {
+        display: block;
+        transform: translateY(108%);
+        opacity: .15;
+        transition: transform .9s cubic-bezier(.22, 1, .36, 1) var(--line-delay),
+                    opacity .65s ease var(--line-delay);
+      }
+
+      .statement.visible .statementLineMask > span {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .statementHover {
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 280px;
+        opacity: 0;
+        transform: translate3d(var(--follow-x, 68%), var(--follow-y, 58%), 0)
+                   translate(-45%, -38%);
+        scale: .94;
+        transition: scale .42s cubic-bezier(.22, 1, .36, 1);
+        mix-blend-mode: difference;
+        pointer-events: none;
+        will-change: transform;
+      }
+
+      .statementText:hover .statementHover {
+        opacity: 1;
+        scale: 1;
+      }
+
+      .statementMeta {
+        position: absolute;
+        left: 3%;
+        right: 3%;
+        bottom: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: var(--grey);
+      }
+
+      .statementMeta * {
+        font: 400 18px/1.2 var(--pp);
+        letter-spacing: .02em;
+      }
+
+      .statementMeta p {
+        margin: 0;
+      }
+
+      .equipmentCol {
+        text-align: right;
+      }
+
+      .equipmentCol small {
+        display: block;
+        text-transform: uppercase;
+      }
+
+      .equipList {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+
+      .equipBtn {
+        border: 1px solid #777;
+        background: none;
+        border-radius: 99px;
+        padding: 10px 14px;
+        color: var(--grey);
+        display: inline-block;
+        white-space: nowrap;
+        cursor: default;
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         SECTION 3 — RELEASE
+         ══════════════════════════════════════════════════════════════ */
+      .release {
+        position: relative;
+        height: 900px;
+        min-height: 900px;
+        padding: 38px 3%;
+        perspective: 850px;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .releaseTop {
+        display: flex;
+        justify-content: space-between;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+      }
+
+      .release h2 {
+        font-family: MonaSemi, sans-serif;
+        font-weight: 500;
+        font-size: clamp(90px, 12.5vw, 180px);
+        line-height: .84;
+        text-align: center;
+        letter-spacing: -.04em;
+        margin: 90px 0 0;
+      }
+
+      .releaseTitleFirst {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .release h2 sup {
+        font: 14px Mona, sans-serif;
+        position: static;
+        margin: 10px 0 0 8px;
+        opacity: 0;
+        transition: opacity .5s cubic-bezier(.44, 0, .56, 1) 1.35s;
+      }
+
+      .release.visible h2 sup {
+        opacity: 1;
+      }
+
+      .releaseTitleLine {
+        display: block;
+      }
+
+      .releaseLetterMask {
+        display: inline-block;
+        overflow: visible;
+      }
+
+      .releaseLetter {
+        display: inline-block;
+        font: inherit;
+        letter-spacing: inherit;
+        opacity: 0;
+        filter: blur(40px);
+        transform: translateY(130%);
+        will-change: transform, opacity, filter;
+        transition: transform .5s cubic-bezier(.44, 0, .56, 1) var(--release-delay),
+                    opacity .5s cubic-bezier(.44, 0, .56, 1) var(--release-delay),
+                    filter .5s cubic-bezier(.44, 0, .56, 1) var(--release-delay);
+      }
+
+      .release.visible .releaseLetter {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+
+      /* 3D Album Card */
+      .album {
+        position: absolute;
+        width: 347px;
+        height: 347px;
+        left: 50%;
+        top: 401px;
+        --rx: 0deg;
+        --ry: 0deg;
+        transform: translateX(-50%) rotateX(var(--rx)) rotateY(var(--ry)) scale(1.025);
+        transition: transform .12s cubic-bezier(.22, .8, .3, 1);
+        transform-style: preserve-3d;
+        mix-blend-mode: difference;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: none;
+        z-index: 3;
+      }
+
+      .album img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        mix-blend-mode: normal;
+        display: block;
+        pointer-events: none;
+      }
+
+      .playerIcon {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      /* Circular hover label */
+      .albumCursor {
+        position: absolute;
+        z-index: 20;
+        width: 100px;
+        height: 100px;
+        padding: 39px 19px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        font: 400 14px/12px var(--pp);
+        letter-spacing: -.14px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.68);
+        transition: opacity .22s, transform .38s cubic-bezier(.22, 1, .36, 1);
+        pointer-events: none;
+      }
+
+      .albumCursor span {
+        white-space: nowrap;
+      }
+
+      .albumCursor.visible {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      /* Waveform Canvas */
+      .wave {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 623px;
+        width: 100%;
+        height: 90px;
+        opacity: 0;
+        transition: opacity .4s;
+        pointer-events: none;
+      }
+
+      .wave.visible {
+        opacity: 1;
+      }
+
+      .releaseCaption {
+        position: absolute;
+        top: 788px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #fff;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+      }
+
+      .releaseCaption span {
+        display: block;
+      }
+
+      .releaseCaption span + span {
+        margin-top: 12px;
+        color: #949494;
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         SECTION 4 — TRACKLIST
+         ══════════════════════════════════════════════════════════════ */
+      .trackSection {
+        min-height: 830px;
+        padding: 40px 4% 40px;
+        background: linear-gradient(180deg, #000 0%, #000 48%, #ea4f16 78%, #f6af60 100%);
+      }
+
+      .trackHead {
+        margin-top: 35px;
+        margin-bottom: 6px;
+        padding: 0 16px;
+        color: #949494;
+        font: 400 14px/20px var(--pp);
+        letter-spacing: -.14px;
+        display: grid;
+        grid-template-columns: 42px 38px 1fr 90px 70px;
+        align-items: center;
+      }
+
+      .track {
+        position: relative;
+        min-height: 54px;
+        padding: 16px;
+        border-top: 1px solid #fff;
+        font-family: var(--pp);
+        font-weight: 400;
+        isolation: isolate;
+        display: grid;
+        grid-template-columns: 42px 38px 1fr 90px 70px;
+        align-items: center;
+      }
+
+      .track > * {
+        z-index: 1;
+      }
+
+      .track:before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        width: var(--progress, 0%);
+        background: #fff;
+        mix-blend-mode: difference;
+        pointer-events: none;
+      }
+
+      .trackIndex {
+        color: rgba(255, 255, 255, .5);
+        font: 400 14px/20px var(--pp);
+        letter-spacing: -.14px;
+      }
+
+      .trackTitle {
+        color: #fff;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+      }
+
+      .trackExample {
+        color: rgba(255, 255, 255, .5);
+        font: 400 14px/20px var(--pp);
+        letter-spacing: -.14px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .trackDuration {
+        color: #fff;
+        text-align: right;
+        font: 400 14px/20px var(--pp);
+        letter-spacing: -.14px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .trackPlayBtn {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        background: none;
+        padding: 0;
+      }
+
+      .trackPlayBtn:not(:disabled) {
+        cursor: pointer;
+      }
+
+      .trackPlayBtn:disabled {
+        opacity: 1;
+        cursor: default;
+      }
+
+      .trackBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 105px;
+      }
+
+      .trackBottom span {
+        color: #fff;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+      }
+
+      .trackBottom .pill:hover {
+        background: #fff;
+        color: #000;
+      }
+
+      /* Track In-View Transitions */
+      .trackSection > .sectionKicker,
+      .trackHead,
+      .track,
+      .trackBottom {
+        opacity: 0;
+        transform: translateY(34px);
+        transition: opacity .5s cubic-bezier(.44, 0, .56, 1),
+                    transform .5s cubic-bezier(.44, 0, .56, 1);
+      }
+
+      .trackSection > .sectionKicker {
+        transition-delay: 0s;
+      }
+
+      .trackHead {
+        transition-delay: .08s;
+      }
+
+      .track {
+        transition-delay: var(--track-delay);
+      }
+
+      .trackBottom {
+        transition-delay: 1.5s;
+      }
+
+      .trackSection.visible > .sectionKicker,
+      .trackSection.visible .trackHead,
+      .trackSection.visible .track,
+      .trackSection.visible .trackBottom {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         SECTION 5 — TOUR
+         ══════════════════════════════════════════════════════════════ */
+      .tour {
+        padding: 40px 3% 0;
+        height: 900px;
+        min-height: 900px;
+      }
+
+      .tour header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .tour h2 {
+        font-family: MonaSemi, sans-serif;
+        font-weight: 500;
+        font-size: clamp(52px, 6vw, 86px);
+        line-height: 1;
+        letter-spacing: -.045em;
+        margin: 0;
+      }
+
+      .tour h2 em {
+        font-style: normal;
+        color: var(--orange);
+      }
+
+      .tour header > span {
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+      }
+
+      .tourTitlePart {
+        display: inline;
+      }
+
+      .tourLetterMask {
+        display: inline-block;
+        overflow: visible;
+      }
+
+      .tourLetter {
+        display: inline-block;
+        opacity: 0;
+        filter: blur(40px);
+        transform: translateY(130%);
+        will-change: transform, opacity, filter;
+        transition: transform .5s cubic-bezier(.44, 0, .56, 1) var(--tour-letter-delay),
+                    opacity .5s cubic-bezier(.44, 0, .56, 1) var(--tour-letter-delay),
+                    filter .5s cubic-bezier(.44, 0, .56, 1) var(--tour-letter-delay);
+      }
+
+      .tour.visible .tourLetter {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+
+      .dateHead {
+        margin-top: 85px;
+        padding: 12px 0;
+        color: #949494;
+        font: 400 14px/20px var(--pp);
+        display: grid;
+        grid-template-columns: 1.1fr 1.4fr 2.8fr 1.1fr 140px;
+        align-items: center;
+      }
+
+      .date {
+        position: relative;
+        border-top: 1px solid #fff;
+        padding: 16px 0;
+        font-family: var(--pp);
+        display: grid;
+        grid-template-columns: 1.1fr 1.4fr 2.8fr 1.1fr 140px;
+        align-items: center;
+      }
+
+      .date > span:first-child {
+        font: 500 18px/20px var(--pp);
+        letter-spacing: -.18px;
+        color: #fff;
+      }
+
+      .date > span:nth-child(2),
+      .date > span:nth-child(3),
+      .date > span:nth-child(4) {
+        font: 400 18px/20px var(--pp);
+        letter-spacing: -.18px;
+        color: #fff;
+      }
+
+      .date.soldOut > span:nth-child(4) {
+        color: rgba(255, 255, 255, .5);
+      }
+
+      .date button {
+        justify-self: end;
+        background: var(--orange);
+        border: 0;
+        border-radius: 99px;
+        padding: 16px 20px;
+        white-space: nowrap;
+        color: #fff;
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+        transition: background-color .3s cubic-bezier(.44, 0, .56, 1),
+                    color .3s cubic-bezier(.44, 0, .56, 1);
+      }
+
+      .date button:not(.sold) {
+        cursor: pointer;
+      }
+
+      .date button:not(.sold):hover {
+        background: #fff;
+        color: #000;
+      }
+
+      .date button.sold {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .5);
+        padding: 12px 24px;
+        cursor: default;
+      }
+
+      .dateHoverImage {
+        position: absolute;
+        z-index: 4;
+        left: 62%;
+        top: 50%;
+        width: 180px;
+        height: 180px;
+        opacity: 0;
+        transform: translate(-50%, -44%) scale(.96);
+        filter: blur(8px);
+        pointer-events: none;
+        transition: opacity .42s cubic-bezier(.44, 0, .56, 1),
+                    transform .42s cubic-bezier(.44, 0, .56, 1),
+                    filter .42s cubic-bezier(.44, 0, .56, 1);
+      }
+
+      .dateHoverImage img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .date:hover {
+        z-index: 5;
+      }
+
+      .date:hover .dateHoverImage {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(0);
+      }
+
+      .tour footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 75px;
+        padding-bottom: 24px;
+        color: rgba(255, 255, 255, .5);
+        font: 400 18px/18px var(--pp);
+        letter-spacing: -.18px;
+      }
+
+      /* Tour In-View Sequence */
+      .tour header > span,
+      .dateHead,
+      .date,
+      .tour footer {
+        opacity: 0;
+        transform: translateY(34px);
+        transition: opacity .5s cubic-bezier(.44, 0, .56, 1),
+                    transform .5s cubic-bezier(.44, 0, .56, 1);
+      }
+
+      .tour header > span {
+        transition-delay: .08s;
+      }
+
+      .dateHead {
+        transition-delay: .1s;
+      }
+
+      .date {
+        transition-delay: var(--delay);
+      }
+
+      .tour footer {
+        transition-delay: 1.2s;
+      }
+
+      .tour.visible header > span,
+      .tour.visible .dateHead,
+      .tour.visible .date,
+      .tour.visible footer {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ══════════════════════════════════════════════════════════════
+         RESPONSIVE RULES
+         ══════════════════════════════════════════════════════════════ */
+      @media (max-width: 1200px) {
+        .heroNameRow > b,
+        .heroTitle h1 {
+          font-size: clamp(112px, 16vw, 190px);
+          letter-spacing: -.06em;
+        }
+        .heroTitle h1 sup {
+          font-size: 32px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          min-height: 760px;
+        }
+        .statement {
+          min-height: 800px;
+        }
+        .statementMeta {
+          position: static;
+          margin-top: 80px;
+          gap: 30px;
+        }
+        .release {
+          height: 680px;
+          min-height: 680px;
+        }
+        .album {
+          width: 278px;
+          height: 278px;
+          top: 250px;
+        }
+        .wave {
+          top: 403px;
+        }
+        .releaseCaption {
+          top: 568px;
+        }
+        .trackSection {
+          min-height: 780px;
+        }
+        .tour {
+          height: auto;
+          min-height: 780px;
+        }
+        .dateHead {
+          display: none;
+        }
+        .date {
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+          padding: 18px 0;
+        }
+        .date span:nth-child(3) {
+          grid-column: 1 / 2;
+        }
+        .date button {
+          grid-column: 2;
+          grid-row: 2 / 4;
+        }
+        .dateHoverImage {
+          display: none;
+        }
+        .tour header {
+          display: block;
+        }
+        .tour header > span {
+          display: block;
+          margin-top: 10px;
+        }
+        .tour footer {
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .heroTitle {
+          top: 110px;
+        }
+        .heroNameRow > b,
+        .heroTitle h1 {
+          font-size: clamp(62px, 17vw, 112px);
+        }
+        .heroTitle h1 sup {
+          font-size: 20px;
+          letter-spacing: -1.2px;
+        }
+        .heroSubrow {
+          margin-top: 18px;
+          font-size: 9px;
+        }
+        .menuPanel {
+          height: 430px;
+          padding-top: 100px;
+          gap: 28px;
+        }
+        .rollingLink {
+          font-size: 64px;
+          line-height: 64px;
+          letter-spacing: -2.56px;
+        }
+        .rollingLetter {
+          height: 64px;
+        }
+        .rollingTrack {
+          height: 128px;
+        }
+        .rollingTrack > span {
+          height: 64px;
+          flex: 0 0 64px;
+          line-height: 64px;
+        }
+        .rollingLink:hover .rollingTrack {
+          transform: translateY(-64px);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .heroNotes {
+          bottom: 80px;
+        }
+        .heroCta {
+          left: 3%;
+          right: auto;
+        }
+        .statement {
+          padding-top: 30px;
+          min-height: 760px;
+        }
+        .statementText {
+          font-size: 43px;
+          line-height: .95;
+        }
+        .statementMeta {
+          display: block;
+        }
+        .statementMeta .equipmentCol {
+          text-align: left;
+          margin-top: 30px;
+        }
+        .statementMeta .equipList {
+          justify-content: flex-start;
+        }
+        .release {
+          height: 590px;
+          min-height: 590px;
+        }
+        .releaseTop span:last-child {
+          display: none;
+        }
+        .release h2 {
+          font-size: 66px;
+          margin-top: 90px;
+        }
+        .album {
+          width: 208px;
+          height: 208px;
+          top: 230px;
+        }
+        .wave {
+          top: 313px;
+        }
+        .releaseCaption {
+          top: 478px;
+        }
+        .trackSection {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        .trackSection > .sectionKicker,
+        .trackBottom {
+          margin-left: 3%;
+          margin-right: 3%;
+        }
+        .trackHead {
+          display: none;
+        }
+        .track {
+          grid-template-columns: 28px 26px 1fr 42px;
+          padding: 13px 10px;
+        }
+        .track span:nth-last-child(2) {
+          display: none;
+        }
+        .track span:last-child {
+          text-align: right;
+        }
+        .trackBottom {
+          margin-top: 70px;
+        }
+        .tour h2 {
+          font-size: 48px;
+        }
+        .date {
+          grid-template-columns: 1fr 1fr;
+        }
+        .tour footer {
+          display: block;
+          line-height: 1.5;
+        }
+        .tour footer span:last-child {
+          display: block;
+          margin-top: 24px;
+        }
+      }
+
+      @media (pointer: coarse) {
+        .cursorGlow {
+          display: none;
+        }
+        .statementHover {
+          display: none;
+        }
+        .albumCursor {
+          display: none;
+        }
+        .album {
+          cursor: pointer;
+        }
+        html, body, body * {
+          cursor: auto !important;
+        }
+        .defaultCursor {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="defaultCursor" aria-hidden="true"></div>
+
+    <main>
+      <!-- ══════════════════════════════════════════════════════════════
+           SECTION 1 — HERO
+           ══════════════════════════════════════════════════════════════ -->
+      <section class="hero">
+        <div class="heroBackdrop"></div>
+        <canvas class="heroShader" aria-hidden="true"></canvas>
+        <div class="cursorGlow" aria-hidden="true"></div>
+
+        <nav class="heroNav" aria-label="Main Navigation">
+          <div class="heroClock">
+            <span class="clockZone">GMT+0 // LOCAL</span>
+            <time class="clockTime">00:00:00</time>
+          </div>
+
+          <button class="menu" aria-label="Toggle menu" aria-expanded="false" type="button">
+            <div class="equalizer" aria-hidden="true">
+              <i style="--bar-height: 3px;"></i>
+              <i style="--bar-height: 7px;"></i>
+              <i style="--bar-height: 12px;"></i>
+              <i style="--bar-height: 4px;"></i>
+              <i style="--bar-height: 8px;"></i>
+              <i style="--bar-height: 6px;"></i>
+              <i style="--bar-height: 3px;"></i>
+            </div>
+            <small>MENU</small>
+          </button>
+
+          <a href="#tour" class="pill">Buy tickets</a>
+        </nav>
+
+        <div class="menuPanel" aria-label="Site menu">
+          <!-- Populated by JS for rolling letter hover -->
+        </div>
+
+        <div class="heroTitle">
+          <div class="heroNameRow">
+            <b aria-label="DJ" id="heroDjWrap"></b>
+            <h1 aria-label="Zak Derdan">
+              <strong id="heroZakWrap"></strong><span class="derdan" id="heroDerdanWrap"></span><sup>®</sup>
+            </h1>
+          </div>
+
+          <div class="heroSubrow">
+            <small>CLASSIC DEEP HOUSE MUSICIAN</small>
+            <small>[ SPEC-01 // DEEP HOUSE ]</small>
+          </div>
+        </div>
+
+        <div class="heroNotes">
+          <p>• Analog synthetics, vinyl-only recordings, 120BPM systemics.</p>
+          <p>• Resident advisor booking list // Spring-Summer Tour ’25</p>
+        </div>
+
+        <div class="heroCta">
+          <a href="#tour" class="pill">See schedule</a>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════
+           SECTION 2 — ARTIST STATEMENT
+           ══════════════════════════════════════════════════════════════ -->
+      <section class="statement" id="statement">
+        <span class="sectionKicker">// Artist Statement</span>
+
+        <div class="statementText">
+          <!-- Statement lines generated by JS -->
+          <img
+            src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/45ff55db-2ee5-4706-b0ac-449ddc3e23fa.png"
+            alt="Zak Derdan Statement Visual"
+            class="statementHover"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="statementMeta">
+          <p>
+            Each composition is structured around<br />
+            raw physical grooves, warm spatial<br />
+            reverbs, and hypnotic basslines designed<br />
+            for dark, extended club sets.
+          </p>
+
+          <div class="equipmentCol">
+            <small>EQUIPMENT</small>
+            <div class="equipList">
+              <span class="equipBtn">Roland TR-909</span>
+              <span class="equipBtn">Juno-106</span>
+              <span class="equipBtn">Moog Minitaur</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════
+           SECTION 3 — RELEASE
+           ══════════════════════════════════════════════════════════════ -->
+      <section class="release" id="release">
+        <div class="releaseTop">
+          <span>// Latest Release & Set Showcase</span>
+          <span>RELEASING MAY ’25 // VINYL & DIGITAL</span>
+        </div>
+
+        <h2>
+          <span class="releaseTitleFirst" aria-label="GRIDLOCK">
+            <span class="releaseLettersFirst" aria-hidden="true"></span><sup>[LP]</sup>
+          </span>
+          <span class="releaseTitleLine" aria-label="HYPNOTICS">
+            <span class="releaseLettersSecond" aria-hidden="true"></span>
+          </span>
+        </h2>
+
+        <button class="album" aria-label="Play main theme" type="button">
+          <img
+            src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7ccc41a0-1638-41dd-99bb-0e63578cd365.png"
+            alt="Gridlock Hypnotics Album Artwork"
+          />
+          <div class="playerIcon" aria-hidden="true" id="albumPlayerGlyph">
+            <!-- Play glyph: white right-pointing triangle 42x52 rounded corners -->
+            <svg width="42" height="52" viewBox="0 0 42 52" fill="none">
+              <path d="M4 4.5V47.5C4 49.8 6.5 51.3 8.5 50.1L39.5 28.6C41.5 27.4 41.5 24.6 39.5 23.4L8.5 1.9C6.5 0.7 4 2.2 4 4.5Z" fill="#fff" />
+            </svg>
+          </div>
+        </button>
+
+        <div class="albumCursor" aria-hidden="true">
+          <span>Listen to</span>
+          <span>an excerpt</span>
+        </div>
+
+        <canvas class="wave" aria-hidden="true"></canvas>
+
+        <div class="releaseCaption">
+          <span>Listen to Promotional Mix</span>
+          <span>10 Tracks // 66 Mins Running Time</span>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════
+           SECTION 4 — TRACKLIST
+           ══════════════════════════════════════════════════════════════ -->
+      <section class="trackSection" id="tracklist">
+        <span class="sectionKicker">TRACKLIST</span>
+
+        <div class="trackHead">
+          <span>#</span>
+          <span style="grid-column: 2 / 4;">Track name</span>
+          <span style="text-align: left;">Example</span>
+          <span style="text-align: right;">Duration</span>
+        </div>
+
+        <div class="trackContainer">
+          <!-- 10 tracks populated by JS -->
+        </div>
+
+        <div class="trackBottom">
+          <span>HEAR IT LIVE – SUMMER TOUR ’26</span>
+          <a href="#tour" class="pill">View Schedule</a>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════════
+           SECTION 5 — TOUR
+           ══════════════════════════════════════════════════════════════ -->
+      <section class="tour" id="tour">
+        <header>
+          <h2>
+            <span class="tourTitlePart" aria-label="SPRING / SUMMER ">
+              <span class="tourTitleLetters1" aria-hidden="true"></span>
+            </span>
+            <em aria-label="TOUR ’26">
+              <span class="tourTitleLetters2" aria-hidden="true"></span>
+            </em>
+          </h2>
+          <span>// TOUR DATES</span>
+        </header>
+
+        <div class="dateHead">
+          <span>DATE</span>
+          <span>LOCATION</span>
+          <span>VENUE / SYSTEM SETUP</span>
+          <span>AVAILABILITY</span>
+          <span style="text-align: right;">REGISTRATION</span>
+        </div>
+
+        <div class="tourDatesContainer">
+          <!-- 6 date rows populated by JS -->
+        </div>
+
+        <footer>
+          <span>* General admission doors open at 22:00. Sound checking starts 2 hours prior.</span>
+          <span>DOCUMENT SYSTEM WIREFRAME V1.0 // ZAK DERDAN</span>
+        </footer>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        'use strict';
+
+        /* ══════════════════════════════════════════════════════════════
+           DATA ARRAYS FOR REPEATED MARKUP
+           ══════════════════════════════════════════════════════════════ */
+        const statementLinesData = [
+          'Rooted in the golden-era deep house',
+          'aesthetics of Chicago and Detroit, Zak',
+          'Derdan crafts stripped-back grooves',
+          'utilizing original vintage synthesizers',
+          'and analog mixing desks.'
+        ];
+
+        const tracksData = [
+          { index: '01', title: 'Midnight Horizon (Original Mix)', example: '00:32', duration: '07:42' },
+          { index: '02', title: 'Subterranean Cables (Dub)', example: '00:43', duration: '06:18' },
+          { index: '03', title: 'Detroit Wire (Classic Echo Out)', example: '00:40', duration: '08:05' },
+          { index: '04', title: 'Dusty Faders (Studio Jam)', example: '00:42', duration: '05:51' },
+          { index: '05', title: 'Echoes in the Grid (Live Edit)', example: '00:41', duration: '07:12' },
+          { index: '06', title: 'Low Frequency Drift (Deep Mix)', example: '00:41', duration: '08:30' },
+          { index: '07', title: 'Signal Loss (Reprise)', example: '00:44', duration: '04:22' },
+          { index: '08', title: 'The Last Transmission (Outro)', example: '00:38', duration: '03:10' },
+          { index: '09', title: 'Resonant Horizon (Extended Mix)', example: '00:39', duration: '09:44' },
+          { index: '10', title: 'Static Pulse (Bonus Track)', example: '00:46', duration: '06:00' }
+        ];
+
+        const tourDatesData = [
+          { date: '12 MAY 2025', location: 'London, UK', venue: 'Fold Club', availability: 'Available', img: '0a96faf9-8962-4a6b-b380-8c27e96a6c81.jpg', sold: false },
+          { date: '19 MAY 2025', location: 'Berlin, DE', venue: 'Tresor (Basement)', availability: 'Available', img: 'cd33407b-c0ff-43b0-8e7e-adb7a883c53f.jpg', sold: false },
+          { date: '05 JUN 2025', location: 'Paris, FR', venue: 'Rex Club', availability: 'Available', img: 'c810cd28-c08c-4789-9fbe-d41f9ad56124.jpg', sold: false },
+          { date: '12 JUN 2025', location: 'Amsterdam, NL', venue: 'De School Vault', availability: 'Available', img: '62f6a29f-1912-4492-ae31-5ae2eb285364.jpg', sold: false },
+          { date: '24 JUN 2025', location: 'Chicago, US', venue: 'Smartbar', availability: 'Available', img: '8ea3ca62-e972-49b0-a416-9f422b17ada9.jpg', sold: false },
+          { date: '02 JUL 2025', location: 'Detroit, US', venue: 'TV Lounge', availability: 'SOLD OUT', img: 'fa644c2e-0f73-4c6c-81a1-1a50399990fe.jpg', sold: true }
+        ];
+
+        const ASSET_BASE = 'https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/';
+
+        /* SVG Glyphs */
+        const glyphPlay42 = '<svg width="42" height="52" viewBox="0 0 42 52" fill="none"><path d="M4 4.5V47.5C4 49.8 6.5 51.3 8.5 50.1L39.5 28.6C41.5 27.4 41.5 24.6 39.5 23.4L8.5 1.9C6.5 0.7 4 2.2 4 4.5Z" fill="#fff"/></svg>';
+        const glyphPause36 = '<svg width="36" height="52" viewBox="0 0 36 52" fill="none"><rect x="0" y="0" width="14" height="52" rx="2" fill="#fff"/><rect x="22" y="0" width="14" height="52" rx="2" fill="#fff"/></svg>';
+        const glyphTrackPlay = '<svg width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M1 2.2V15.8C1 16.6 1.9 17.1 2.6 16.7L12.5 9.9C13.2 9.4 13.2 8.6 12.5 8.1L2.6 1.3C1.9 0.9 1 1.4 1 2.2Z" fill="#fff"/></svg>';
+        const glyphTrackPause = '<svg width="13" height="18" viewBox="0 0 13 18" fill="none"><rect x="0" y="0" width="5" height="18" rx="1" fill="#fff"/><rect x="8" y="0" width="5" height="18" rx="1" fill="#fff"/></svg>';
+
+        /* ══════════════════════════════════════════════════════════════
+           DOM BUILDERS
+           ══════════════════════════════════════════════════════════════ */
+        function appendAnimatedLetters(parent, text, startDelay) {
+          const wordContainer = document.createElement('span');
+          wordContainer.className = 'animatedWord';
+          wordContainer.setAttribute('aria-hidden', 'true');
+          for (let i = 0; i < text.length; i++) {
+            const mask = document.createElement('span');
+            mask.className = 'letterMask';
+            const letter = document.createElement('span');
+            letter.className = 'heroLetter';
+            letter.style.setProperty('--letter-delay', (startDelay + i * 0.1).toFixed(2) + 's');
+            letter.textContent = text[i];
+            mask.appendChild(letter);
+            wordContainer.appendChild(mask);
+          }
+          parent.appendChild(wordContainer);
+        }
+
+        // Hero name letters
+        const djWrap = document.getElementById('heroDjWrap');
+        if (djWrap) appendAnimatedLetters(djWrap, 'DJ', 0.38);
+
+        const zakWrap = document.getElementById('heroZakWrap');
+        if (zakWrap) appendAnimatedLetters(zakWrap, 'Zak', 0.58);
+
+        const derdanWrap = document.getElementById('heroDerdanWrap');
+        if (derdanWrap) appendAnimatedLetters(derdanWrap, 'Derdan', 0.88);
+
+        // Menu Panel Links
+        const menuPanel = document.querySelector('.menuPanel');
+        const menuItems = [
+          { text: 'Statement', href: '#statement' },
+          { text: 'Release', href: '#release' },
+          { text: 'Tour', href: '#tour' }
+        ];
+
+        menuItems.forEach((item) => {
+          const a = document.createElement('a');
+          a.className = 'rollingLink';
+          a.href = item.href;
+          a.setAttribute('aria-label', item.text);
+
+          for (let i = 0; i < item.text.length; i++) {
+            const letterWrap = document.createElement('span');
+            letterWrap.className = 'rollingLetter';
+            letterWrap.setAttribute('aria-hidden', 'true');
+
+            const track = document.createElement('span');
+            track.className = 'rollingTrack';
+            track.style.setProperty('--roll-delay', (i * 34) + 'ms');
+
+            const s1 = document.createElement('span');
+            s1.textContent = item.text[i];
+            const s2 = document.createElement('span');
+            s2.textContent = item.text[i];
+
+            track.appendChild(s1);
+            track.appendChild(s2);
+            letterWrap.appendChild(track);
+            a.appendChild(letterWrap);
+          }
+
+          a.addEventListener('click', () => {
+            menuPanel.classList.remove('open');
+            const menuBtn = document.querySelector('.menu');
+            if (menuBtn) {
+              menuBtn.classList.remove('open');
+              menuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          menuPanel.appendChild(a);
+        });
+
+        // Statement Lines
+        const statementTextContainer = document.querySelector('.statementText');
+        const statementHoverImg = statementTextContainer.querySelector('.statementHover');
+        statementLinesData.forEach((line, index) => {
+          const mask = document.createElement('div');
+          mask.className = 'statementLineMask';
+          const span = document.createElement('span');
+          span.style.setProperty('--line-delay', (index * 110) + 'ms');
+          span.textContent = line;
+          mask.appendChild(span);
+          statementTextContainer.insertBefore(mask, statementHoverImg);
+        });
+
+        // Release Title letters
+        function buildReleaseLetters(targetElem, text, offset) {
+          for (let i = 0; i < text.length; i++) {
+            const mask = document.createElement('span');
+            mask.className = 'releaseLetterMask';
+            const letter = document.createElement('span');
+            letter.className = 'releaseLetter';
+            letter.style.setProperty('--release-delay', ((offset + i) * 0.05).toFixed(2) + 's');
+            letter.textContent = text[i];
+            mask.appendChild(letter);
+            targetElem.appendChild(mask);
+          }
+        }
+        const rel1 = document.querySelector('.releaseLettersFirst');
+        const rel2 = document.querySelector('.releaseLettersSecond');
+        if (rel1) buildReleaseLetters(rel1, 'GRIDLOCK', 0);
+        if (rel2) buildReleaseLetters(rel2, 'HYPNOTICS', 8);
+
+        // Tracklist rows
+        const trackContainer = document.querySelector('.trackContainer');
+        tracksData.forEach((track, i) => {
+          const row = document.createElement('div');
+          row.className = 'track';
+          row.style.setProperty('--track-delay', (0.16 + i * 0.085).toFixed(3) + 's');
+          if (i === 0) row.id = 'track01Row';
+
+          const idxSpan = document.createElement('span');
+          idxSpan.className = 'trackIndex';
+          idxSpan.textContent = track.index;
+
+          const btn = document.createElement('button');
+          btn.className = 'trackPlayBtn';
+          if (i !== 0) {
+            btn.disabled = true;
+            btn.setAttribute('aria-label', 'Preview disabled');
+            btn.innerHTML = glyphTrackPlay;
+          } else {
+            btn.id = 'track01Btn';
+            btn.setAttribute('aria-label', 'Play track preview');
+            btn.innerHTML = glyphTrackPlay;
+          }
+
+          const titleSpan = document.createElement('span');
+          titleSpan.className = 'trackTitle';
+          titleSpan.textContent = track.title;
+
+          const exampleSpan = document.createElement('span');
+          exampleSpan.className = 'trackExample';
+          exampleSpan.textContent = track.example;
+          if (i === 0) exampleSpan.id = 'track01Example';
+
+          const durSpan = document.createElement('span');
+          durSpan.className = 'trackDuration';
+          durSpan.textContent = track.duration;
+
+          row.appendChild(idxSpan);
+          row.appendChild(btn);
+          row.appendChild(titleSpan);
+          row.appendChild(exampleSpan);
+          row.appendChild(durSpan);
+          trackContainer.appendChild(row);
+        });
+
+        // Tour Title Letters
+        function buildTourLetters(targetElem, text, offset) {
+          for (let i = 0; i < text.length; i++) {
+            const mask = document.createElement('span');
+            mask.className = 'tourLetterMask';
+            const letter = document.createElement('span');
+            letter.className = 'tourLetter';
+            letter.style.setProperty('--tour-letter-delay', ((offset + i) * 0.05).toFixed(2) + 's');
+            if (text[i] === ' ') {
+              letter.innerHTML = '&nbsp;';
+            } else {
+              letter.textContent = text[i];
+            }
+            mask.appendChild(letter);
+            targetElem.appendChild(mask);
+          }
+        }
+        const tourL1 = document.querySelector('.tourTitleLetters1');
+        const tourL2 = document.querySelector('.tourTitleLetters2');
+        if (tourL1) buildTourLetters(tourL1, 'SPRING / SUMMER ', 0);
+        if (tourL2) buildTourLetters(tourL2, 'TOUR ’26', 16);
+
+        // Tour Dates rows
+        const tourDatesContainer = document.querySelector('.tourDatesContainer');
+        tourDatesData.forEach((item, i) => {
+          const row = document.createElement('div');
+          row.className = 'date' + (item.sold ? ' soldOut' : '');
+          row.style.setProperty('--delay', (0.16 + i * 0.085).toFixed(3) + 's');
+
+          const sDate = document.createElement('span');
+          sDate.textContent = item.date;
+
+          const sLoc = document.createElement('span');
+          sLoc.textContent = item.location;
+
+          const sVenue = document.createElement('span');
+          sVenue.textContent = item.venue;
+
+          const sAvail = document.createElement('span');
+          sAvail.textContent = item.availability;
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          if (item.sold) {
+            btn.className = 'sold';
+            btn.textContent = 'Sold Out';
+          } else {
+            btn.textContent = 'Get Ticket';
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const original = btn.textContent;
+              btn.textContent = 'Redirecting...';
+              setTimeout(() => { btn.textContent = original; }, 1500);
+            });
+          }
+
+          const hoverImgDiv = document.createElement('div');
+          hoverImgDiv.className = 'dateHoverImage';
+          hoverImgDiv.setAttribute('aria-hidden', 'true');
+          const img = document.createElement('img');
+          img.src = ASSET_BASE + item.img;
+          img.alt = item.location;
+          hoverImgDiv.appendChild(img);
+
+          row.appendChild(sDate);
+          row.appendChild(sLoc);
+          row.appendChild(sVenue);
+          row.appendChild(sAvail);
+          row.appendChild(btn);
+          row.appendChild(hoverImgDiv);
+          tourDatesContainer.appendChild(row);
+        });
+
+        /* ══════════════════════════════════════════════════════════════
+           LIVE CLOCK IN HERO NAV
+           ══════════════════════════════════════════════════════════════ */
+        const clockZoneElem = document.querySelector('.clockZone');
+        const clockTimeElem = document.querySelector('.clockTime');
+        const offsetHours = -new Date().getTimezoneOffset() / 60;
+        const sign = offsetHours >= 0 ? '+' : '';
+        const offsetFormatted = Number.isInteger(offsetHours) ? (sign + offsetHours) : (sign + offsetHours.toFixed(1));
+        if (clockZoneElem) {
+          clockZoneElem.textContent = 'GMT' + offsetFormatted + ' // LOCAL';
+        }
+
+        function updateClock() {
+          if (!clockTimeElem) return;
+          const now = new Date();
+          clockTimeElem.textContent = now.toLocaleTimeString('en-GB', {
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          });
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        /* ══════════════════════════════════════════════════════════════
+           MENU TOGGLE
+           ══════════════════════════════════════════════════════════════ */
+        const menuBtn = document.querySelector('.menu');
+        if (menuBtn) {
+          menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = menuBtn.classList.toggle('open');
+            menuPanel.classList.toggle('open', isOpen);
+            menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        }
+
+        document.addEventListener('click', (e) => {
+          if (menuPanel && menuPanel.classList.contains('open')) {
+            if (!menuPanel.contains(e.target) && !menuBtn.contains(e.target)) {
+              menuPanel.classList.remove('open');
+              menuBtn.classList.remove('open');
+              menuBtn.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+
+        /* ══════════════════════════════════════════════════════════════
+           CUSTOM CURSOR
+           ══════════════════════════════════════════════════════════════ */
+        const defaultCursor = document.querySelector('.defaultCursor');
+        if (window.matchMedia('(pointer: fine)').matches) {
+          window.addEventListener('pointermove', (e) => {
+            defaultCursor.style.transform = 'translate3d(' + e.clientX + 'px, ' + e.clientY + 'px, 0) translate(-50%, -50%)';
+            defaultCursor.classList.add('visible');
+          });
+
+          document.documentElement.addEventListener('pointerleave', () => {
+            defaultCursor.classList.remove('visible');
+          });
+
+          window.addEventListener('blur', () => {
+            defaultCursor.classList.remove('visible');
+          });
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           HERO PARALLAX & GLOW
+           ══════════════════════════════════════════════════════════════ */
+        const heroSection = document.querySelector('.hero');
+        const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!isReduced && heroSection) {
+          let ticking = false;
+          const updateHeroParallax = () => {
+            const rect = heroSection.getBoundingClientRect();
+            const progress = Math.min(1, Math.max(0, -rect.top / rect.height));
+            heroSection.style.setProperty('--hero-scale', (1 + progress * 0.2).toString());
+            heroSection.style.setProperty('--hero-shift', (progress * -7) + '%');
+            ticking = false;
+          };
+
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              requestAnimationFrame(updateHeroParallax);
+              ticking = true;
+            }
+          }, { passive: true });
+
+          window.addEventListener('resize', () => {
+            if (!ticking) {
+              requestAnimationFrame(updateHeroParallax);
+              ticking = true;
+            }
+          }, { passive: true });
+        }
+
+        if (heroSection) {
+          heroSection.addEventListener('pointermove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            heroSection.style.setProperty('--x', x + 'px');
+            heroSection.style.setProperty('--y', y + 'px');
+          });
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           WEBGL RIPPLE SHADER
+           ══════════════════════════════════════════════════════════════ */
+        function initHeroShader() {
+          if (!window.matchMedia('(min-width: 769px) and (pointer: fine)').matches) return;
+          const canvas = document.querySelector('.heroShader');
+          if (!canvas) return;
+          const gl = canvas.getContext('webgl', { alpha: true, antialias: false });
+          if (!gl) return;
+
+          const vsSource = `
+            attribute vec2 position;
+            varying vec2 vUv;
+            void main(){
+              vUv = position * 0.5 + 0.5;
+              gl_Position = vec4(position, 0.0, 1.0);
+            }
+          `;
+
+          const fsSource = `
+            precision highp float;
+            varying vec2 vUv;
+            uniform sampler2D image;
+            uniform vec2 resolution, imageSize, mouse, trail[9];
+            uniform float strength, time;
+            vec2 coverUv(vec2 uv){
+              float rs = resolution.x / resolution.y;
+              float is = imageSize.x / imageSize.y;
+              vec2 scale = rs < is ? vec2(rs / is, 1.0) : vec2(1.0, is / rs);
+              return (uv - 0.5) * scale + 0.5;
+            }
+            void main(){
+              vec2 uv = vUv;
+              vec2 aspect = vec2(resolution.x / resolution.y, 1.0);
+              vec2 delta = (uv - mouse) * aspect;
+              float dist = length(delta);
+              float radius = 0.47;
+              float falloff = smoothstep(radius, 0.0, dist) * strength;
+              vec2 dir = delta / (dist + 0.0001);
+              vec2 tangent = vec2(-dir.y, dir.x);
+              float wave = sin(dist * 38.0 - time * 2.15) * falloff;
+              float secondary = sin(dist * 19.0 + time * 0.7) * falloff;
+              vec2 displacement = dir * (wave * 0.00525 + falloff * 0.004);
+              displacement += tangent * secondary * 0.001875;
+              vec2 sampleUv = coverUv(uv + displacement);
+              float aberration = (falloff * 0.0016 + abs(wave) * 0.0012);
+              vec2 rgbShift = dir * aberration;
+              float r = texture2D(image, sampleUv + rgbShift).r;
+              float g = texture2D(image, sampleUv).g;
+              float b = texture2D(image, sampleUv - rgbShift).b;
+              vec3 color = vec3(r, g, b);
+              vec3 orange = vec3(1.0, 0.22, 0.025);
+              float glow = falloff * (0.10 + 0.08 * (sin(dist * 28.0 - time * 1.5) * 0.5 + 0.5));
+              float trailGlow = 0.0;
+              for(int i = 0; i < 9; i++){
+                vec2 trailDelta = (uv - trail[i]) * aspect;
+                float trailDistance = length(trailDelta);
+                float age = 1.0 - float(i) / 9.0;
+                float halo = exp(-trailDistance * trailDistance * 145.0);
+                float core = exp(-trailDistance * trailDistance * 420.0);
+                float shimmer = 0.82 + 0.18 * sin(time * 2.0 - float(i) * 0.72);
+                trailGlow += (halo * 0.48 + core * 0.28) * age * age * shimmer;
+              }
+              float headProtection = smoothstep(0.035, 0.105, dist);
+              trailGlow = min(trailGlow, 1.35) * strength * headProtection;
+              vec3 trailOrange = vec3(1.0, 0.31, 0.045);
+              vec3 trailGold = vec3(1.0, 0.58, 0.20);
+              color += orange * glow;
+              color += trailOrange * trailGlow * 0.46;
+              color += trailGold * pow(trailGlow, 1.65) * 0.11;
+              gl_FragColor = vec4(color, 1.0);
+            }
+          `;
+
+          function createShader(glCtx, type, src) {
+            const s = glCtx.createShader(type);
+            glCtx.shaderSource(s, src);
+            glCtx.compileShader(s);
+            if (!glCtx.getShaderParameter(s, glCtx.COMPILE_STATUS)) {
+              console.warn(glCtx.getShaderInfoLog(s));
+              glCtx.deleteShader(s);
+              return null;
+            }
+            return s;
+          }
+
+          const vs = createShader(gl, gl.VERTEX_SHADER, vsSource);
+          const fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+          if (!vs || !fs) return;
+
+          const program = gl.createProgram();
+          gl.attachShader(program, vs);
+          gl.attachShader(program, fs);
+          gl.linkProgram(program);
+          if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+            console.warn(gl.getProgramInfoLog(program));
+            return;
+          }
+          gl.useProgram(program);
+
+          const quad = new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]);
+          const buf = gl.createBuffer();
+          gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+          gl.bufferData(gl.ARRAY_BUFFER, quad, gl.STATIC_DRAW);
+
+          const posLoc = gl.getAttribLocation(program, 'position');
+          gl.enableVertexAttribArray(posLoc);
+          gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+          const uResolution = gl.getUniformLocation(program, 'resolution');
+          const uImageSize = gl.getUniformLocation(program, 'imageSize');
+          const uMouse = gl.getUniformLocation(program, 'mouse');
+          const uTrail = gl.getUniformLocation(program, 'trail[0]');
+          const uStrength = gl.getUniformLocation(program, 'strength');
+          const uTime = gl.getUniformLocation(program, 'time');
+          const uImage = gl.getUniformLocation(program, 'image');
+
+          let imgW = 1920, imgH = 1080;
+          let isTextureReady = false;
+
+          const texture = gl.createTexture();
+          const image = new Image();
+          image.crossOrigin = 'anonymous';
+          image.onload = () => {
+            imgW = image.naturalWidth || 1920;
+            imgH = image.naturalHeight || 1080;
+            gl.bindTexture(gl.TEXTURE_2D, texture);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            canvas.classList.add('ready');
+            isTextureReady = true;
+          };
+          image.src = ASSET_BASE + 'bf3df250-6dbc-4deb-a275-776985e9cd2a.png';
+
+          function resizeShader() {
+            const dpr = Math.min(window.devicePixelRatio || 1, 2.25);
+            const rect = canvas.getBoundingClientRect();
+            const w = Math.round(rect.width * dpr);
+            const h = Math.round(rect.height * dpr);
+            if (canvas.width !== w || canvas.height !== h) {
+              canvas.width = w;
+              canvas.height = h;
+              gl.viewport(0, 0, w, h);
+            }
+          }
+          resizeShader();
+          window.addEventListener('resize', resizeShader);
+
+          let targetX = 0.5, targetY = 0.5;
+          let currentX = 0.5, currentY = 0.5;
+          let targetStrength = 0, currentStrength = 0;
+          const trailPoints = [];
+          for (let i = 0; i < 9; i++) {
+            trailPoints.push({ x: 0.5, y: 0.5 });
+          }
+          const trailFlat = new Float32Array(18);
+
+          heroSection.addEventListener('pointermove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            targetX = (e.clientX - rect.left) / rect.width;
+            targetY = 1.0 - (e.clientY - rect.top) / rect.height;
+            targetStrength = 1.0;
+          });
+
+          heroSection.addEventListener('pointerleave', () => {
+            targetStrength = 0.0;
+          });
+
+          function animateShader(timestamp) {
+            if (isTextureReady) {
+              currentX += (targetX - currentX) * 0.075;
+              currentY += (targetY - currentY) * 0.075;
+              currentStrength += (targetStrength - currentStrength) * (targetStrength ? 0.07 : 0.028);
+
+              let leader = { x: currentX, y: currentY };
+              for (let i = 0; i < 9; i++) {
+                const follow = 0.19 - i * 0.009;
+                trailPoints[i].x += (leader.x - trailPoints[i].x) * follow;
+                trailPoints[i].y += (leader.y - trailPoints[i].y) * follow;
+                leader = trailPoints[i];
+                trailFlat[i * 2] = trailPoints[i].x;
+                trailFlat[i * 2 + 1] = trailPoints[i].y;
+              }
+
+              gl.uniform2f(uResolution, canvas.width, canvas.height);
+              gl.uniform2f(uImageSize, imgW, imgH);
+              gl.uniform2f(uMouse, currentX, currentY);
+              gl.uniform1f(uStrength, currentStrength);
+              gl.uniform1f(uTime, timestamp * 0.001);
+              gl.uniform2fv(uTrail, trailFlat);
+              gl.uniform1i(uImage, 0);
+
+              gl.drawArrays(gl.TRIANGLES, 0, 6);
+            }
+            requestAnimationFrame(animateShader);
+          }
+          requestAnimationFrame(animateShader);
+        }
+        initHeroShader();
+
+        /* ══════════════════════════════════════════════════════════════
+           STATEMENT SECTION POINTER TRAIL
+           ══════════════════════════════════════════════════════════════ */
+        const statementTextElem = document.querySelector('.statementText');
+        if (statementTextElem && window.matchMedia('(pointer: fine)').matches) {
+          let sPrevTime = performance.now();
+          let sTargetX = 0, sTargetY = 0;
+          let sCurrentX = 0, sCurrentY = 0;
+          let sIsMoving = false;
+          let sRafId = null;
+
+          function updateStatementTrail(now) {
+            const delta = Math.min(32, now - sPrevTime);
+            sPrevTime = now;
+            const follow = 1 - Math.exp(-delta / 140);
+            sCurrentX += (sTargetX - sCurrentX) * follow;
+            sCurrentY += (sTargetY - sCurrentY) * follow;
+
+            statementTextElem.style.setProperty('--follow-x', sCurrentX.toFixed(2) + 'px');
+            statementTextElem.style.setProperty('--follow-y', sCurrentY.toFixed(2) + 'px');
+
+            if (Math.abs(sTargetX - sCurrentX) <= 0.1 && Math.abs(sTargetY - sCurrentY) <= 0.1) {
+              sIsMoving = false;
+              sRafId = null;
+              return;
+            }
+            sRafId = requestAnimationFrame(updateStatementTrail);
+          }
+
+          statementTextElem.addEventListener('pointermove', (e) => {
+            const rect = statementTextElem.getBoundingClientRect();
+            sTargetX = e.clientX - rect.left;
+            sTargetY = e.clientY - rect.top;
+            if (!sIsMoving) {
+              sIsMoving = true;
+              sPrevTime = performance.now();
+              sRafId = requestAnimationFrame(updateStatementTrail);
+            }
+          });
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           RELEASE SECTION 3D ALBUM TILT & HOVER CURSOR
+           ══════════════════════════════════════════════════════════════ */
+        const releaseSection = document.querySelector('.release');
+        const albumBtn = document.querySelector('.album');
+        const albumCursor = document.querySelector('.albumCursor');
+
+        if (releaseSection && albumBtn) {
+          releaseSection.addEventListener('pointermove', (e) => {
+            const rect = releaseSection.getBoundingClientRect();
+            const rx = ((e.clientY - rect.top) / rect.height - 0.5) * -24.2;
+            const ry = ((e.clientX - rect.left) / rect.width - 0.5) * 30.8;
+            albumBtn.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+            albumBtn.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+
+            if (albumCursor) {
+              albumCursor.style.left = (e.clientX - rect.left) + 'px';
+              albumCursor.style.top = (e.clientY - rect.top) + 'px';
+            }
+          });
+
+          releaseSection.addEventListener('pointerleave', () => {
+            albumBtn.style.setProperty('--rx', '0deg');
+            albumBtn.style.setProperty('--ry', '0deg');
+            if (albumCursor) albumCursor.classList.remove('visible');
+            if (defaultCursor) defaultCursor.classList.remove('overAlbum');
+          });
+
+          albumBtn.addEventListener('pointerenter', () => {
+            if (window.matchMedia('(pointer: fine)').matches) {
+              if (albumCursor) albumCursor.classList.add('visible');
+              if (defaultCursor) defaultCursor.classList.add('overAlbum');
+            }
+          });
+
+          albumBtn.addEventListener('pointerleave', () => {
+            if (albumCursor) albumCursor.classList.remove('visible');
+            if (defaultCursor) defaultCursor.classList.remove('overAlbum');
+          });
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           WAVEFORM CANVAS
+           ══════════════════════════════════════════════════════════════ */
+        const waveCanvas = document.querySelector('.wave');
+        const waveCtx = waveCanvas ? waveCanvas.getContext('2d') : null;
+        let waveFrame = 0;
+        let waveRaf = null;
+
+        function resizeWave() {
+          if (!waveCanvas) return;
+          const dpr = window.devicePixelRatio || 1;
+          const rect = waveCanvas.getBoundingClientRect();
+          waveCanvas.width = rect.width * dpr;
+          waveCanvas.height = rect.height * dpr;
+          waveCtx.scale(dpr, dpr);
+        }
+        window.addEventListener('resize', resizeWave);
+
+        function renderWave() {
+          if (!waveCanvas || !waveCtx) return;
+          const rect = waveCanvas.getBoundingClientRect();
+          const w = rect.width;
+          const h = rect.height;
+          waveCtx.clearRect(0, 0, w, h);
+          waveCtx.beginPath();
+          waveCtx.strokeStyle = '#fff';
+          waveCtx.lineWidth = 1;
+
+          for (let x = 0; x <= w; x += 4) {
+            const energy = Math.sin(x * 0.13 + waveFrame * 0.09) * Math.sin(x * 0.031 - waveFrame * 0.04);
+            const y = h / 2 + energy * (9 + 8 * Math.sin(waveFrame * 0.03 + x * 0.01));
+            if (x === 0) {
+              waveCtx.moveTo(x, y);
+            } else {
+              waveCtx.lineTo(x, y);
+            }
+          }
+
+          waveCtx.stroke();
+          waveFrame++;
+          waveRaf = requestAnimationFrame(renderWave);
+        }
+
+        function startWave() {
+          if (!waveCanvas) return;
+          resizeWave();
+          waveCanvas.classList.add('visible');
+          if (!waveRaf) waveRaf = requestAnimationFrame(renderWave);
+        }
+
+        function stopWave() {
+          if (!waveCanvas) return;
+          waveCanvas.classList.remove('visible');
+          if (waveRaf) {
+            cancelAnimationFrame(waveRaf);
+            waveRaf = null;
+          }
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           AUDIO PLAYERS & MUTUAL EXCLUSION
+           ══════════════════════════════════════════════════════════════ */
+        const audioMain = new Audio(ASSET_BASE + '26c56a9f-8ed6-4a21-a7b0-032861351dc4.mp3');
+        const audioPreview = new Audio(ASSET_BASE + 'c713acb2-dec3-4887-bc30-08babb564591.mp3');
+
+        let isMainPlaying = false;
+        let isPreviewPlaying = false;
+
+        const albumGlyph = document.getElementById('albumPlayerGlyph');
+        const track01Btn = document.getElementById('track01Btn');
+        const track01Row = document.getElementById('track01Row');
+        const track01Example = document.getElementById('track01Example');
+
+        function formatDuration(sec) {
+          if (isNaN(sec) || sec < 0) return '00:00';
+          const m = Math.floor(sec / 60);
+          const s = Math.floor(sec % 60);
+          return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+        }
+
+        function setAlbumPlayingState(playing) {
+          isMainPlaying = playing;
+          if (albumBtn) {
+            albumBtn.setAttribute('aria-label', playing ? 'Pause main theme' : 'Play main theme');
+          }
+          if (albumGlyph) {
+            albumGlyph.innerHTML = playing ? glyphPause36 : glyphPlay42;
+          }
+          if (playing) {
+            startWave();
+          } else {
+            stopWave();
+          }
+        }
+
+        function setTrack01PlayingState(playing) {
+          isPreviewPlaying = playing;
+          if (track01Btn) {
+            track01Btn.setAttribute('aria-label', playing ? 'Pause track preview' : 'Play track preview');
+            track01Btn.innerHTML = playing ? glyphTrackPause : glyphTrackPlay;
+          }
+          if (track01Row) {
+            track01Row.classList.toggle('playing', playing);
+          }
+        }
+
+        // Toggle Album Audio
+        if (albumBtn) {
+          albumBtn.addEventListener('click', () => {
+            if (isMainPlaying) {
+              audioMain.pause();
+              setAlbumPlayingState(false);
+            } else {
+              if (isPreviewPlaying) {
+                audioPreview.pause();
+                setTrack01PlayingState(false);
+                if (track01Row) track01Row.style.setProperty('--progress', '0%');
+                if (track01Example) track01Example.textContent = formatDuration(Math.ceil(audioPreview.duration || 32));
+              }
+              audioMain.play().then(() => {
+                setAlbumPlayingState(true);
+              }).catch(() => {});
+            }
+          });
+        }
+
+        audioMain.addEventListener('ended', () => {
+          setAlbumPlayingState(false);
+        });
+
+        // Track 01 Audio events
+        if (track01Btn) {
+          track01Btn.addEventListener('click', () => {
+            if (isPreviewPlaying) {
+              audioPreview.pause();
+              setTrack01PlayingState(false);
+            } else {
+              if (isMainPlaying) {
+                audioMain.pause();
+                setAlbumPlayingState(false);
+              }
+              audioPreview.play().then(() => {
+                setTrack01PlayingState(true);
+              }).catch(() => {});
+            }
+          });
+        }
+
+        audioPreview.addEventListener('loadedmetadata', () => {
+          if (track01Example) {
+            track01Example.textContent = formatDuration(Math.ceil(audioPreview.duration));
+          }
+        });
+
+        audioPreview.addEventListener('timeupdate', () => {
+          if (!audioPreview.duration) return;
+          const rem = Math.max(0, Math.ceil(audioPreview.duration - audioPreview.currentTime));
+          if (track01Example) {
+            track01Example.textContent = formatDuration(rem);
+          }
+          if (track01Row) {
+            const p = (audioPreview.currentTime / audioPreview.duration) * 100;
+            track01Row.style.setProperty('--progress', p + '%');
+          }
+        });
+
+        audioPreview.addEventListener('ended', () => {
+          setTrack01PlayingState(false);
+          if (track01Row) track01Row.style.setProperty('--progress', '0%');
+          if (track01Example) {
+            track01Example.textContent = formatDuration(Math.ceil(audioPreview.duration || 32));
+          }
+        });
+
+        /* ══════════════════════════════════════════════════════════════
+           INTERSECTION OBSERVERS (ONE-SHOT REVEALS)
+           ══════════════════════════════════════════════════════════════ */
+        const statementSection = document.querySelector('.statement');
+        if (statementSection) {
+          const obs = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              statementSection.classList.add('visible');
+              observer.disconnect();
+            }
+          }, { threshold: 0.2 });
+          obs.observe(statementSection);
+        }
+
+        if (releaseSection) {
+          const obs = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              releaseSection.classList.add('visible');
+              observer.disconnect();
+            }
+          }, { threshold: 0.22 });
+          obs.observe(releaseSection);
+        }
+
+        const trackSection = document.querySelector('.trackSection');
+        if (trackSection) {
+          const obs = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              trackSection.classList.add('visible');
+              observer.disconnect();
+            }
+          }, { threshold: 0.5 });
+          obs.observe(trackSection);
+        }
+
+        const tourSection = document.querySelector('.tour');
+        if (tourSection) {
+          const obs = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              tourSection.classList.add('visible');
+              observer.disconnect();
+            }
+          }, { threshold: 0.5 });
+          obs.observe(tourSection);
+        }
+      })();
+    </script>
+  </body>
+</html>
